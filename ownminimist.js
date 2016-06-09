@@ -15,12 +15,29 @@ if (args.help || !args.file){
 
 var hello = require("./helloworld.js");
 
-var contents = hello.say(args.file);
+// readFileSync implementation
+// var contents = hello.say(args.file);
 // contents is an array buffer
-console.log(contents);
+// console.log(contents);
 // converts the buffer contents to a printable string
-console.log(contents.toString());
+// console.log(contents.toString());
 
-// var name = args.name;
+// async implementation
 
-// console.log("hello, " + name);
+hello.sayAsync(args.file, function(err, contents){
+  if (err){
+    console.error("Error: " + err);
+  } else {
+    console.log(contents);
+    console.log(contents.toString());
+  }
+});
+
+hello.sayAsyncWithTimeout(args.file, function(err, contents){
+  if (err){
+    console.error("Error: " + err);
+  } else {
+    console.log(contents);
+    console.log(contents.toString());
+  }
+})
