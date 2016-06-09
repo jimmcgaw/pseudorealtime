@@ -7,15 +7,9 @@ function* idGenerator(){
 
 var gen = idGenerator();
 
-// console.log(gen.next().value);
-// console.log(gen.next().value);
-// console.log(gen.next().value);
-// console.log(gen.next().value);
-// console.log(gen.next().value);
-
-function* fibonacci(){
-  var value1 = 1;
-  var value2 = 1;
+function* fibonacci(a, b){
+  var value1 = a;
+  var value2 = b;
   yield value1;
   yield value2;
 
@@ -27,8 +21,5 @@ function* fibonacci(){
   }
 }
 
-var fibo = fibonacci();
-// print first 20 values of fiboacci sequence
-for (var i = 0; i < 20; i++){
-  console.log(fibo.next().value);
-}
+
+module.exports.fibonacci = fibonacci;
