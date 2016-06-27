@@ -32,4 +32,12 @@
     });
   });
 
+  describe('#add', function() {
+    it('calling generator next returns object with "value" prop with result', function () {
+      var gen = generator.add(6, 7);
+      var result = gen.next();
+      assert.equal(result.value, 13);
+    });
+  });
+
 }());

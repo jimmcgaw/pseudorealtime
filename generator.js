@@ -21,5 +21,10 @@ function* fibonacci(a, b){
   }
 }
 
+function *add(x, y){
+  return x + y;
+}
+
 
 module.exports.fibonacci = fibonacci;
+module.exports.add = add;
